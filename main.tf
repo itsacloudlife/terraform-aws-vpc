@@ -1,6 +1,6 @@
 module "vpc" {
   source     = "cloudposse/vpc/aws"
-  version    = "0.26.1"
+  version    = "2.1.0"
   namespace  = var.namespace
   stage      = var.stage
   name       = var.name
