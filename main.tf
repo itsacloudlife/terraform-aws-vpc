@@ -4,7 +4,7 @@ module "vpc" {
   namespace  = var.namespace
   stage      = var.stage
   name       = var.name
-  cidr_block = var.cidr_block
+  ipv4_primary_cidr_block = var.cidr_block
 }
 
 module "dynamic_subnets" {
