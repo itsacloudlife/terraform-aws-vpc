@@ -26,4 +26,5 @@ module "flow_logs" {
   stage     = var.stage
   name      = "flowlogs"
   vpc_id    = module.vpc.vpc_id
+  s3_object_ownership = var.s3_object_ownership
 }
