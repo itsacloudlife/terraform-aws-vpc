@@ -40,5 +40,5 @@ variable "availability_zones" {
 variable "s3_object_ownership" {
   type        = string
   description = "S3 object ownership"
-  default     = "BucketOwnerPreferred"
+  default     = "BucketOwnerEnforced"
 }
