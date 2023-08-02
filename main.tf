@@ -16,15 +16,15 @@ module "dynamic_subnets" {
   availability_zones = var.availability_zones
   vpc_id             = module.vpc.vpc_id
   igw_id             = module.vpc.igw_id
-  ipv4_cidr_block         = var.cidr_block
+  ipv4_cidr_block    = var.cidr_block
 }
 
 module "flow_logs" {
-  source    = "cloudposse/vpc-flow-logs-s3-bucket/aws"
-  version   = "1.0.1"
-  namespace = var.namespace
-  stage     = var.stage
-  name      = "flowlogs"
-  vpc_id    = module.vpc.vpc_id
+  source              = "cloudposse/vpc-flow-logs-s3-bucket/aws"
+  version             = "1.0.1"
+  namespace           = var.namespace
+  stage               = var.stage
+  name                = "flowlogs"
+  vpc_id              = module.vpc.vpc_id
   s3_object_ownership = var.s3_object_ownership
 }
