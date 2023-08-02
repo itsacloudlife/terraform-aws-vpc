@@ -42,3 +42,9 @@ variable "s3_object_ownership" {
   description = "S3 object ownership"
   default     = "BucketOwnerEnforced"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`)"
+  default     = {}
+}
