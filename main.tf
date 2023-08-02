@@ -1,10 +1,10 @@
 module "vpc" {
-  source     = "cloudposse/vpc/aws"
-  version    = "2.1.0"
-  namespace  = var.namespace
-  stage      = var.stage
-  name       = var.name
-  cidr_block = var.cidr_block
+  source                  = "cloudposse/vpc/aws"
+  version                 = "2.1.0"
+  namespace               = var.namespace
+  stage                   = var.stage
+  name                    = var.name
+  ipv4_primary_cidr_block = var.cidr_block
 }
 
 module "dynamic_subnets" {
