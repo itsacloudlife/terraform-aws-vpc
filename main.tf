@@ -28,5 +28,5 @@ module "flow_logs" {
   name                = "flowlogs"
   vpc_id              = module.vpc.vpc_id
   s3_object_ownership = var.s3_object_ownership
-  bucket_name         = "${var.name}-${var.stage}-VPC-flowlogs"
+  bucket_name         = "${var.name}-${var.stage}-account-flowlogs"
 }
