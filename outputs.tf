@@ -20,7 +20,7 @@ output "igw_id" {
   description = "Internet Gateway ID"
 }
 
-output "s3_bucket_id" {
-  value       = module.flow_logs.s3_bucket_id
+output "logflow_bucket_id" {
+  value       = module.flow_logs.bucket_id
   description = "S3 Bucket ID"
 }
