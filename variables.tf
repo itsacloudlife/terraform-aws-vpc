@@ -22,6 +22,11 @@ variable "stage" {
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
 }
 
+variable "region" {
+  type = string
+  description = "Region"
+}
+
 #-----------------------------------
 #    Networking
 #-----------------------------------
