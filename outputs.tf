@@ -14,3 +14,13 @@ output "public_subnets" {
 output "route_table_ids" {
   value = concat(module.dynamic_subnets.private_route_table_ids, module.dynamic_subnets.public_route_table_ids)
 }
+
+output "igw_id" {
+  value       = module.vpc.igw_id
+  description = "Internet Gateway ID"
+}
+
+output "s3_bucket_id" {
+  value       = module.flow_logs.s3_bucket_id
+  description = "S3 Bucket ID"
+}
