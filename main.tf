@@ -9,7 +9,7 @@ module "vpc" {
 
 module "dynamic_subnets" {
   source             = "cloudposse/dynamic-subnets/aws"
-  # version            = "2.4.1"
+  version            = "0.39.3"
   namespace          = var.namespace
   stage              = var.stage
   name               = var.name
