@@ -23,7 +23,7 @@ variable "stage" {
 }
 
 variable "region" {
-  type = string
+  type        = string
   description = "Region"
 }
 
