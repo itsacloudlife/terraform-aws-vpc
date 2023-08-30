@@ -9,14 +9,14 @@ module "vpc" {
 
 module "dynamic_subnets" {
   source             = "cloudposse/dynamic-subnets/aws"
-  version            = var.dynamic_subnets_version
+  version            = "2.1.0"
   namespace          = var.namespace
   stage              = var.stage
   name               = var.name
   availability_zones = var.availability_zones
   vpc_id             = module.vpc.vpc_id
-  igw_id             = module.vpc.igw_id
-  cidr_block         = var.cidr_block
+  igw_id             = [module.vpc.igw_id]
+  ipv4_cidr_block    = [var.cidr_block]
   tags               = var.tags
 }
 
