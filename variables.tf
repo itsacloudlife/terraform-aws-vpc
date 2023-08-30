@@ -53,3 +53,8 @@ variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`)"
   default     = {}
 }
+
+variable "dynamic_subnets_version" {
+  description = "Dynamic subnets version"
+  type        = string
+}
