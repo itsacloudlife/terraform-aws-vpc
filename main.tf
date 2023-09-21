@@ -16,7 +16,7 @@ module "dynamic_subnets" {
   availability_zones = var.availability_zones
   vpc_id             = module.vpc.vpc_id
   igw_id             = module.vpc.igw_id
-  ipv4_cidr_block    = var.cidr_block
+  ipv4_cidr_block    = [var.cidr_block]
 }
 
 module "flow_logs" {
