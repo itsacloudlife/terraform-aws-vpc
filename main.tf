@@ -21,7 +21,7 @@ module "dynamic_subnets" {
 
 module "flow_logs" {
   source    = "cloudposse/vpc-flow-logs-s3-bucket/aws"
-  version   = "2.4.1"
+  version   = "1.0.1"
   namespace = var.namespace
   stage     = var.stage
   name      = "flowlogs"
