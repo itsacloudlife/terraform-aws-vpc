@@ -26,9 +26,9 @@ variable "stage" {
 #    Networking
 #-----------------------------------
 
-variable "ipv4_cidr_block" {
+variable "cidr_block" {
   type        = string
-  description = "ipv4 Cidr block of the VPC"
+  description = "Cidr block of the VPC"
 }
 
 variable "availability_zones" {
