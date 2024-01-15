@@ -53,3 +53,8 @@ variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`)"
   default     = {}
 }
+
+variable "create_s3_endpoint" {
+  type = bool
+  default = true
+}
