@@ -1,0 +1,45 @@
+name: Auto-Tag on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  tag-and-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Configure Git
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Create and Push Tag
+      run: |
+        # Example: Create a tag based on the PR title or some other logic
+        # For simplicity, we're assuming the PR title contains the version, e.g., "Release v1.0.0"
+        TAG_NAME=$(echo ${{ github.event.pull_request.title }} | grep -o 'v[0-9]*\.[0-9]*\.[0-9]*')
+        if [[ ! -z "$TAG_NAME" ]]; then
+          git tag $TAG_NAME HEAD -m "Release $TAG_NAME [skip ci]"
+          git push origin $TAG_NAME
+        else
+          echo "No version found in PR title. Skipping tag creation."
+        fi
+
+    # Optional: Create a GitHub Release
+    - name: Create GitHub Release
+      if: env.TAG_NAME != ''
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        release_name: Release ${{ env.TAG_NAME }}
+        draft: false
+        prerelease: false
+        body: "Description of the release goes here."
+
