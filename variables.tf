@@ -22,6 +22,11 @@ variable "stage" {
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
 }
 
+variable "region" {
+  type        = string
+  description = "Region"
+}
+
 #-----------------------------------
 #    Networking
 #-----------------------------------
@@ -35,4 +40,21 @@ variable "availability_zones" {
   type        = list(string)
   description = "Availability zones to use"
   default     = ["us-west-2a", "us-west-2b", "us-west-2c"]
+}
+
+variable "s3_object_ownership" {
+  type        = string
+  description = "S3 object ownership"
+  default     = "BucketOwnerEnforced"
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`)"
+  default     = {}
+}
+
+variable "create_s3_endpoint" {
+  type = bool
+  default = true
 }
