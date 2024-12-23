@@ -58,3 +58,8 @@ variable "create_s3_endpoint" {
   type = bool
   default = true
 }
+
+variable "flow_logs_versioning" {
+  type = bool
+  default = false
+}
