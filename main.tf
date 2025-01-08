@@ -29,4 +29,5 @@ module "flow_logs" {
   vpc_id              = module.vpc.vpc_id
   s3_object_ownership = var.s3_object_ownership
   bucket_name         = "${var.namespace}-${var.stage}-${var.region}-${var.name}-flowlogs"
+  versioning_enabled = var.flow_logs_versioning
 }
